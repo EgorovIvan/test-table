@@ -1,43 +1,32 @@
 <template>
-	<div class="table">
-		<div class="table__header">
-			<p>Дата</p>
-			<p>Название</p>
-			<p>Количество</p>
-			<p>Расстояние</p>
-		</div>
-		<div class="table__body">
-		
-		</div>
+	<hr/>
+	<div class="table__row">
+		<p class="table__row-item">{{rowData.date}}</p>
+		<p class="table__row-item">{{rowData.name}}</p>
+		<p class="table__row-item">{{rowData.count}} шт</p>
+		<p class="table__row-item">{{rowData.distance}} км</p>
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'UserTable',
-		props: {
-			msg: String
-		}
+		name: 'TableRow',
+		props: ['rowData'],
 	}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-	h3 {
-		margin: 40px 0 0;
+	.table__row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: black;
+		margin: 0;
 	}
-	
-	ul {
-		list-style-type: none;
-		padding: 0;
-	}
-	
-	li {
-		display: inline-block;
-		margin: 0 10px;
-	}
-	
-	a {
-		color: #42b983;
+	.table__row-item {
+		width: 160px;
+		height: 40px;
+		margin: 0;
 	}
 </style>
